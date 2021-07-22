@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">king_game</string>
+
+    <!--共通-->
+    <string name="start_capital">START</string>
+    <string name="back">back</string>
+    <string name="empty"></string>
+
+
+    <!--Main-->
+    <string name="app_title">King Game ~王様ゲーム~</string>
+    <string name="text_explain_input">Please enter the number of people!\n~人数を入れてね！~</string>
+
+    <!--Play-->
+    <string name="explain_game">Please select one\nひとつ選択してください。</string>
+    <string name="button_king_or_citizen">King\nor\nCitizen</string>
+
+
+</resources>
