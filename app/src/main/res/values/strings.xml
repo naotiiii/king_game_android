@@ -5,15 +5,33 @@
     <string name="start_capital">START</string>
     <string name="back">back</string>
     <string name="empty"></string>
+    <string name="close">CLOSE</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="king">KING</string>
+
+
+    <string name="role_explain">Check the number and press the button\n番号を確認し、ボタンを押してください。</string>
 
 
     <!--Main-->
     <string name="app_title">King Game ~王様ゲーム~</string>
     <string name="text_explain_input">Please enter the number of people!\n~人数を入れてね！~</string>
+    <string name="explain_play_number">Please enter the number of people!\n入力フォームに人数を入れてね!</string>
+    <string name="validation_string_to_int">Please enter the numbers!\n数字を入れてね！</string>
+    <string name="validation_int_range">Please enter number between 1 and 30!\n1以上30までの数字を入れてね！</string>
 
     <!--Play-->
     <string name="explain_game">Please select one\nひとつ選択してください。</string>
     <string name="button_king_or_citizen">King\nor\nCitizen</string>
+    <string name="button_selected">Selected\n選択済</string>
+    <string name="show_correct_number">Correct Number</string>
 
+    <!--Citizen-->
+    <string name="citizen_title">You are Citizen</string>
+
+
+    <!--King-->
+    <string name="king_title">You are King</string>
+    <string name="king_explain">You are King\nあなたは、王様です。</string>
 
 </resources>

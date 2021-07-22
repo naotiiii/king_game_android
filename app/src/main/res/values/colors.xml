@@ -8,9 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="primary_top_blue">#70E9FF</color>
     <color name="primary_thin_blue">#67BCEE</color>
     <color name="primary_green">#6FF53E</color>
     <color name="button_orange">#FF652E</color>
     <color name="clear">#00000000</color>
+    <color name="background_gray">#808080</color>
 
 </resources>
