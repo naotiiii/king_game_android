@@ -6,6 +6,8 @@
     <string name="back">back</string>
     <string name="empty"></string>
     <string name="close">CLOSE</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
     <string name="confirmed">Confirmed</string>
     <string name="king">KING</string>
     <string name="role_explain">Check the number and press the button\n番号を確認し、下のボタンを押してください。</string>
@@ -28,6 +30,8 @@
     <string name="button_king_or_citizen">King\nor\nCitizen</string>
     <string name="button_selected">Selected\n選択済</string>]:
     <string name="show_correct_number">Correct Number</string>
+    <string name="next_game">Next Game</string>
+    <string name="next_game_explain">Start same number of people!!!\n同じ人数でおこないます。</string>
     <string name="finish_explain_text">Please Tap CORRECT NUMBER!\nそれぞれの番号を確認できます。</string>
 
     <!--Citizen-->

@@ -1,5 +1,6 @@
 package com.example.king_game.Activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -52,6 +54,7 @@ public class PlayActivity extends AppCompatActivity {
     private TextView mExplainText;
 
     private Button mCorrectBtn;
+    private Button mNextGameBtn;
 
     private GridView mGridView;
 
@@ -96,25 +99,7 @@ public class PlayActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if (mTappedNumber == mInputNumber) {
-            mCorrectBtn.setVisibility(View.VISIBLE);
-
-            StringBuilder str = new StringBuilder();
-            for (int i=0; i < mCorrectNumList.size(); i++) {
-                int num = i+1;
-                if (mCorrectNumList.get(i).equals(getString(R.string.king))) {
-                    str.append(num + "番目: " + mCorrectNumList.get(i) + "\n");
-                    continue;
-                }
-                str.append( num + "番目: " + "No." + mCorrectNumList.get(i) + "\n");
-            }
-            mExplainText.setText(getString(R.string.finish_explain_text));
-            mExplainText.setTextColor(getColor(android.R.color.holo_red_dark));
-            mFinishText.setText(str);
-        }
-
-        PlayGridAdapter adapter = new PlayGridAdapter(this, mInputNumber, mTappedList);
-        mGridView.setAdapter(adapter);
+        setView();
     }
 
     /**
@@ -138,6 +123,10 @@ public class PlayActivity extends AppCompatActivity {
 
         Button finishBtn = findViewById(R.id.button_close);
         finishBtn.setOnClickListener(v -> onClickVisibleChange(mFinishLayout, false));
+
+        mNextGameBtn = findViewById(R.id.button_next_game);
+        mNextGameBtn.setVisibility(View.GONE);
+        mNextGameBtn.setOnClickListener(v -> onClickNextGameBtn());
 
         mGridView = findViewById(R.id.grid_view);
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -180,6 +169,40 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     /**
+     * Viewのセット
+     */
+    private void setView() {
+        if (mTappedNumber == mInputNumber) {
+            mCorrectBtn.setVisibility(View.VISIBLE);
+            mNextGameBtn.setVisibility(View.VISIBLE);
+
+            StringBuilder str = new StringBuilder();
+            for (int i=0; i < mCorrectNumList.size(); i++) {
+                int num = i+1;
+                if (mCorrectNumList.get(i).equals(getString(R.string.king))) {
+                    str.append(num + "番目: " + mCorrectNumList.get(i) + "\n");
+                    continue;
+                }
+                str.append( num + "番目: " + "No." + mCorrectNumList.get(i) + "\n");
+            }
+            mExplainText.setText(getString(R.string.finish_explain_text));
+            mExplainText.setTextColor(getColor(android.R.color.holo_red_dark));
+            mFinishText.setText(str);
+        }
+
+        PlayGridAdapter adapter = new PlayGridAdapter(this, mInputNumber, mTappedList);
+        mGridView.setAdapter(adapter);
+    }
+
+    /**
+     * 画面更新
+     */
+    private void reloadView() {
+        initView();
+        setView();
+    }
+
+    /**
      * ツールバーに戻るボタンをセット
      */
     private void setBackButton() {
@@ -188,6 +211,30 @@ public class PlayActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+    }
+
+    /**
+     * 次のゲームタップ処理
+     */
+    private void onClickNextGameBtn() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.next_game_explain))
+                .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        reloadView();
+                    }
+                })
+                .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .create();
+
+        builder.show();
+
     }
 
     /**
@@ -253,6 +300,11 @@ public class PlayActivity extends AppCompatActivity {
      * 正解番号や番号系の設定
      */
     private void setContent() {
+        mTappedList.clear();
+        mCorrectNumList.clear();
+        mArrayNumber.clear();
+        mShowNumberList.clear();
+
         // 入力した値までの配列
         for (int i = 0; i < mInputNumber; i++) {
             mArrayNumber.add(i);
