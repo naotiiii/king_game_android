@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.king_game.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class KingActivity extends AppCompatActivity {
 
@@ -22,6 +24,10 @@ public class KingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_king);
 
         initView();
+
+        AdView adView = findViewById(R.id.ad_view);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
     }
 
 

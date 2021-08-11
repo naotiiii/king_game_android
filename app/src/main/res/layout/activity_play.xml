@@ -30,11 +30,40 @@
         android:textSize="20dp"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintBottom_toTopOf="@id/grid_view"
+        app:layout_constraintBottom_toTopOf="@id/layout_ad_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center_horizontal"
         />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/text_explain_game"
+        app:layout_constraintBottom_toTopOf="@id/grid_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ad_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/black"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/ad_view_advertising_banner_id_test"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <GridView
         android:id="@+id/grid_view"
@@ -47,7 +76,7 @@
         android:horizontalSpacing="8dp"
         android:stretchMode="columnWidth"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/text_explain_game"
+        app:layout_constraintTop_toBottomOf="@id/layout_ad_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +87,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_correct_number"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/grid_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -73,7 +103,6 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:padding="20dp"
-
         app:layout_constraintTop_toBottomOf="@id/text_explain_game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

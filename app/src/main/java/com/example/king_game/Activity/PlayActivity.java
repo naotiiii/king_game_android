@@ -19,6 +19,16 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.king_game.Adapter.PlayGridAdapter;
 import com.example.king_game.R;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -34,11 +44,18 @@ public class PlayActivity extends AppCompatActivity {
 
     private int mInputNumber;
 
+    private AdRequest mAdRequest;
+    private InterstitialAd mInterstitialAd;
+
     private ConstraintLayout mFinishLayout;
+
+    private TextView mExplainText;
 
     private Button mCorrectBtn;
 
     private GridView mGridView;
+
+    private static int mTappedNumber;
 
     // 入力された番号までの配列 [0,1,2,3・・・]
     private ArrayList<Integer> mArrayNumber = new ArrayList<Integer>();
@@ -54,22 +71,32 @@ public class PlayActivity extends AppCompatActivity {
     // 王様番号
     private static Integer mKingNum;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_play);
 
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+            }
+        });
+
         initView();
+
+        AdView adView = findViewById(R.id.ad_view);
+        mAdRequest = new AdRequest.Builder().build();
+        adView.loadAd(mAdRequest);
+
+        setInterstitial();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        if (mShowNumberList.size() == 0) {
+        if (mTappedNumber == mInputNumber) {
             mCorrectBtn.setVisibility(View.VISIBLE);
 
             StringBuilder str = new StringBuilder();
@@ -81,6 +108,8 @@ public class PlayActivity extends AppCompatActivity {
                 }
                 str.append( num + "番目: " + "No." + mCorrectNumList.get(i) + "\n");
             }
+            mExplainText.setText(getString(R.string.finish_explain_text));
+            mExplainText.setTextColor(getColor(android.R.color.holo_red_dark));
             mFinishText.setText(str);
         }
 
@@ -93,6 +122,10 @@ public class PlayActivity extends AppCompatActivity {
      */
     private void initView() {
         setBackButton();
+
+        mTappedNumber = 0;
+
+        mExplainText = findViewById(R.id.text_explain_game);
 
         mFinishLayout = findViewById(R.id.layout_finish_explain);
         mFinishLayout.setVisibility(View.GONE);
@@ -118,6 +151,7 @@ public class PlayActivity extends AppCompatActivity {
                     }
                 }
 
+                mTappedNumber += 1;
                 mTappedList.add(position);
 
                 Intent intent;
@@ -142,8 +176,6 @@ public class PlayActivity extends AppCompatActivity {
             Log.d("PlayActivity", String.valueOf(e));
         }
 
-
-
         setContent();
     }
 
@@ -163,10 +195,58 @@ public class PlayActivity extends AppCompatActivity {
      */
     private void onClickVisibleChange(ConstraintLayout layout, boolean isVisible) {
         if (isVisible) {
+            if (mInterstitialAd != null) {
+                mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                    @Override
+                    public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
+                        super.onAdFailedToShowFullScreenContent(adError);
+                    }
+
+                    @Override
+                    public void onAdShowedFullScreenContent() {
+                        super.onAdShowedFullScreenContent();
+                        mInterstitialAd = null;
+                    }
+
+                    @Override
+                    public void onAdDismissedFullScreenContent() {
+                        super.onAdDismissedFullScreenContent();
+                    }
+
+                    @Override
+                    public void onAdImpression() {
+                        super.onAdImpression();
+                    }
+                });
+                mInterstitialAd.show(this);
+            }
             layout.setVisibility(View.VISIBLE);
         } else {
             layout.setVisibility(View.GONE);
         }
+    }
+
+    /**
+     * インタースティシャル広告の設定
+     */
+    private void setInterstitial() {
+        Log.d("PlayActivity", "setInterstitial");
+        // インタースティシャル広告のロード
+        InterstitialAd.load(this, getString(R.string.ad_view_advertising_interstitial_id_test), mAdRequest, new InterstitialAdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                super.onAdLoaded(interstitialAd);
+                Log.d("PlayActivity", "onAdLoaded");
+                mInterstitialAd = interstitialAd;
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+                Log.d("PlayActivity", "onAdFailedToLoad");
+                mInterstitialAd = null;
+            }
+        });
     }
 
     /**

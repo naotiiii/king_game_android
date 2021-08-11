@@ -63,10 +63,38 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/img_citizen"
         app:layout_constraintTop_toBottomOf="@id/text_citizen_explain"
-        app:layout_constraintBottom_toTopOf="@id/layout_bottom_button"
+        app:layout_constraintBottom_toTopOf="@id/layout_ad_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_ad_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/image_citizen"
+        app:layout_constraintBottom_toTopOf="@id/layout_bottom_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ad_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/black"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/ad_view_advertising_banner_id_test"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_bottom_button"

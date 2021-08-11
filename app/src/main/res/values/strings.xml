@@ -8,10 +8,13 @@
     <string name="close">CLOSE</string>
     <string name="confirmed">Confirmed</string>
     <string name="king">KING</string>
+    <string name="role_explain">Check the number and press the button\n番号を確認し、下のボタンを押してください。</string>
 
-
-    <string name="role_explain">Check the number and press the button\n番号を確認し、ボタンを押してください。</string>
-
+    <!--AdMob 広告-->
+    <string name="ad_view_advertising_banner_id_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_view_advertising_banner_id">ca-app-pub-8858591747711781/1646509306</string>
+    <string name="ad_view_advertising_interstitial_id_test">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ad_view_advertising_interstitial_id">ca-app-pub-8858591747711781/4150287671</string>
 
     <!--Main-->
     <string name="app_title">King Game ~王様ゲーム~</string>
@@ -23,8 +26,9 @@
     <!--Play-->
     <string name="explain_game">Please select one\nひとつ選択してください。</string>
     <string name="button_king_or_citizen">King\nor\nCitizen</string>
-    <string name="button_selected">Selected\n選択済</string>
+    <string name="button_selected">Selected\n選択済</string>]:
     <string name="show_correct_number">Correct Number</string>
+    <string name="finish_explain_text">Please Tap CORRECT NUMBER!\nそれぞれの番号を確認できます。</string>
 
     <!--Citizen-->
     <string name="citizen_title">You are Citizen</string>
