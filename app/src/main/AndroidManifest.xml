@@ -12,6 +12,10 @@
         >
 <!--        android:theme="@style/Theme.King_game"-->
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8858591747711781~9002255144"/>
+
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
