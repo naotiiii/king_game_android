@@ -279,7 +279,7 @@ public class PlayActivity extends AppCompatActivity {
     private void setInterstitial() {
         Log.d("PlayActivity", "setInterstitial");
         // インタースティシャル広告のロード
-        InterstitialAd.load(this, getString(R.string.ad_view_advertising_interstitial_id_test), mAdRequest, new InterstitialAdLoadCallback() {
+        InterstitialAd.load(this, getString(R.string.ad_view_advertising_interstitial_id), mAdRequest, new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 super.onAdLoaded(interstitialAd);
