@@ -8,7 +8,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,12 +51,23 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView(){
         mPeopleNum = findViewById(R.id.edit_text_people);
+        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        mPeopleNum.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)){
+                    mInputMethodManager.hideSoftInputFromWindow(mPeopleNum.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
+                    return true;
+                }
+                return false;
+            }
+        });
 
         mStartButton = findViewById(R.id.button_start);
         mStartButton.setOnClickListener(v -> onClickStartBtn());
 
         mMainLayout = findViewById(R.id.constraint_layout_main);
-        mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     }
 
     /**
