@@ -1,4 +1,4 @@
-package com.example.king_game.Activity;
+package com.hato.king_game.Activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,11 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.example.king_game.R;
+import com.hato.king_game.R;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;

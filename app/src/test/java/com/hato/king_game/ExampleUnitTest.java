@@ -1,4 +1,4 @@
-package com.example.king_game;
+package com.hato.king_game;
 
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.king_game">
+    package="com.hato.king_game">
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8858591747711781~9002255144"/>
 
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name="com.hato.king_game.Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,15 +24,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activity.PlayActivity"
+        <activity android:name="com.hato.king_game.Activity.PlayActivity"
             android:label="@string/app_title"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".Activity.KingActivity"
+        <activity android:name="com.hato.king_game.Activity.KingActivity"
             android:label="@string/empty"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".Activity.CitizenActivity"
+        <activity android:name="com.hato.king_game.Activity.CitizenActivity"
             android:label="@string/empty"
             android:screenOrientation="portrait"
              

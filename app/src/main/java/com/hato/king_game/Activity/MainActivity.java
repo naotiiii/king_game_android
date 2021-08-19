@@ -1,30 +1,24 @@
-package com.example.king_game.Activity;
+package com.hato.king_game.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.versionedparcelable.VersionedParcel;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.hardware.input.InputManager;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.king_game.R;
+import com.hato.king_game.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-
-import java.text.ParseException;
-import java.util.StringTokenizer;
 
 public class MainActivity extends AppCompatActivity {
 

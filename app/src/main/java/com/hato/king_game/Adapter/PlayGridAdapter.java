@@ -1,4 +1,4 @@
-package com.example.king_game.Adapter;
+package com.hato.king_game.Adapter;
 
 import android.content.Context;
 import android.os.Build;
@@ -9,9 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.king_game.R;
+import com.hato.king_game.R;
 
 import java.util.ArrayList;
 

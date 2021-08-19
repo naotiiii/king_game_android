@@ -1,4 +1,4 @@
-package com.example.king_game.Activity;
+package com.hato.king_game.Activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,8 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.example.king_game.Adapter.PlayGridAdapter;
-import com.example.king_game.R;
+import com.hato.king_game.Adapter.PlayGridAdapter;
+import com.hato.king_game.R;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -32,12 +32,9 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
-import java.util.logging.Logger;
 
 
 public class PlayActivity extends AppCompatActivity {
