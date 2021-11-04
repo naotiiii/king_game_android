@@ -220,7 +220,7 @@ public class PlayActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         mExplainText.setText(R.string.explain_game);
-                        mExplainText.setTextColor(R.color.black);
+                        mExplainText.setTextColor(getColor(android.R.color.black));
                         reloadView();
                     }
                 })
