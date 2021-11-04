@@ -219,6 +219,8 @@ public class PlayActivity extends AppCompatActivity {
                 .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        mExplainText.setText(R.string.explain_game);
+                        mExplainText.setTextColor(R.color.black);
                         reloadView();
                     }
                 })
@@ -235,7 +237,7 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     /**
-     * 閉じるボタンタップ処理
+     * Correctタンタップ処理
      */
     private void onClickVisibleChange(ConstraintLayout layout, boolean isVisible) {
         if (isVisible) {
