@@ -170,6 +170,9 @@ public class PlayActivity extends AppCompatActivity {
      */
     private void setView() {
         if (mTappedNumber == mInputNumber) {
+
+            showEndGameAlert();
+
             mCorrectBtn.setVisibility(View.VISIBLE);
             mNextGameBtn.setVisibility(View.VISIBLE);
 
@@ -208,6 +211,17 @@ public class PlayActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+    }
+
+    /**
+     * 全ての番号が出た時のアラート
+     */
+    private void showEndGameAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.finish_end_game_word)
+                .setPositiveButton(R.string.close, null)
+                .create();
+        builder.show();
     }
 
     /**

@@ -21,7 +21,9 @@ public class CitizenActivity extends AppCompatActivity {
 
     public static final String CITIZEN_NUMBER = "CITIZEN_NUMBER";
 
-    private AdView mAdView;
+    private static AdView mAdView;
+
+    private static AdRequest mAdRequest;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
