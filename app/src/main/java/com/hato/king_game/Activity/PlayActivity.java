@@ -145,13 +145,17 @@ public class PlayActivity extends AppCompatActivity {
                 if (mKingNum.equals(mArrayNumber.get(position))) {
                     mCorrectNumList.add(getString(R.string.king));
                     intent = new Intent(PlayActivity.this, KingActivity.class);
+                    startActivity(intent);
                 } else {
-                    mCorrectNumList.add(String.valueOf(mShowNumberList.get(0)));
-                    intent = new Intent(PlayActivity.this, CitizenActivity.class);
-                    intent.putExtra(CitizenActivity.CITIZEN_NUMBER, mShowNumberList.get(0));
-                    mShowNumberList.remove(mShowNumberList.get(0));
+                    if (mShowNumberList.size() > 0) {
+                        mCorrectNumList.add(String.valueOf(mShowNumberList.get(0)));
+                        intent = new Intent(PlayActivity.this, CitizenActivity.class);
+                        intent.putExtra(CitizenActivity.CITIZEN_NUMBER, mShowNumberList.get(0));
+                        mShowNumberList.remove(mShowNumberList.get(0));
+                        startActivity(intent);
+                    }
                 }
-                startActivity(intent);
+
             }
         });
 
