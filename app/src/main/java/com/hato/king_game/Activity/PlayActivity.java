@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -118,7 +119,7 @@ public class PlayActivity extends AppCompatActivity {
         mCorrectBtn.setVisibility(View.GONE);
         mCorrectBtn.setOnClickListener(v -> onClickVisibleChange(mFinishLayout, true));
 
-        Button finishBtn = findViewById(R.id.button_close);
+        ImageButton finishBtn = findViewById(R.id.button_close);
         finishBtn.setOnClickListener(v -> onClickVisibleChange(mFinishLayout, false));
 
         mNextGameBtn = findViewById(R.id.button_next_game);
