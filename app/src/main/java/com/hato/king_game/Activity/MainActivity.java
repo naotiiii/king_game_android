@@ -5,15 +5,20 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Path;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.hato.king_game.R;
 import com.google.android.gms.ads.AdRequest;
@@ -23,6 +28,7 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class MainActivity extends AppCompatActivity {
+    private Handler handler = new Handler();
 
     private EditText mPeopleNum;
 
@@ -71,10 +77,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Imageアニメーション
+     */
+    private void animationImage() {
+        ImageView kingImage = findViewById(R.id.image_king);
+        ImageView citizenImage = findViewById(R.id.image_citizen);
+
+        Path path = new Path();
+        path.arcTo(0f, 0f, 1000f, 1000f, 270f, -180f, true);
+        ObjectAnimator animator1 = ObjectAnimator.ofFloat(kingImage, View.X, View.Y, path);
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(citizenImage, View.X, View.Y, path);
+        animator1.setDuration(2000);
+        animator1.start();
+    }
+
+    /**
      * スタートボタン処理
      */
     private void onClickStartBtn() {
-        if (mPeopleNum.getText().toString() == null || mPeopleNum.getText().toString().equals("")) {
+        mPeopleNum.getText().toString();
+        if (mPeopleNum.getText().toString().equals("")) {
             showValidationAlert(getString(R.string.explain_play_number));
             return;
         }

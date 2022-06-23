@@ -35,7 +35,8 @@
         android:layout_height="wrap_content"
         android:text="@string/king_explain"
         android:textSize="25sp"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/white"
+        android:background="@color/king_yellow"
         android:gravity="center_horizontal"
         android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -60,8 +61,8 @@
 
     <ImageView
         android:id="@+id/image_king"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@mipmap/img_king"
         app:layout_constraintTop_toBottomOf="@id/text_explain_king"
         app:layout_constraintBottom_toTopOf="@id/layout_confirmed"
@@ -73,7 +74,6 @@
         android:id="@+id/layout_ad_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/image_king"
         app:layout_constraintBottom_toTopOf="@id/layout_confirmed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

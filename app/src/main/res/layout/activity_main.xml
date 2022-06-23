@@ -43,12 +43,13 @@
      <EditText
          android:id="@+id/edit_text_people"
          android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:background="@drawable/frame_border_black"
+         android:layout_height="40dp"
+         android:background="@drawable/text_field_round"
          android:padding="5dp"
          android:layout_marginTop="50dp"
          android:textSize="20sp"
          android:inputType="number"
+         android:textAlignment="center"
          app:layout_constraintTop_toTopOf="parent"
          app:layout_constraintBottom_toTopOf="@id/space_vertical1"
          app:layout_constraintStart_toStartOf="parent"
@@ -88,13 +89,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             />
 
+        <ImageView
+            android:id="@+id/img_king"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:src="@mipmap/img_king"
+            app:layout_constraintBottom_toTopOf="@id/button_start"
+            app:layout_constraintStart_toStartOf="@id/button_start"
+            />
+
+        <ImageView
+            android:id="@+id/img_citizen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:src="@mipmap/img_citizen"
+            app:layout_constraintBottom_toTopOf="@id/button_start"
+            app:layout_constraintEnd_toEndOf="@+id/button_start"
+            />
+
         <Button
             android:id="@+id/button_start"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
             android:text="@string/start_capital"
-            android:backgroundTint="@color/button_orange"
+            android:textSize="20sp"
+            android:background="@drawable/btn_round"
             android:textColor="@color/white"
+            android:drawableEnd="@drawable/baseline_flag_white_24"
+            android:drawablePadding="-20dp"
             app:layout_constraintTop_toBottomOf="@id/space_vertical2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">king_game</string>
+    <string name="app_name">King Game</string>
 
     <!--共通-->
-    <string name="start_capital">START</string>
+    <string name="start_capital">START GAME</string>
     <string name="back">back</string>
     <string name="empty"></string>
     <string name="close">CLOSE</string>
