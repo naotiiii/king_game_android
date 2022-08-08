@@ -212,7 +212,11 @@ public class PlayActivity extends AppCompatActivity {
      */
     private void setBackButton() {
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(getColor(R.color.white));
+
+
         setSupportActionBar(toolbar);
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
