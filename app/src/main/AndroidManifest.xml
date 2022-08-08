@@ -21,7 +21,9 @@
 
         <activity
             android:name="com.hato.king_game.Activity.MainActivity"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,15 +34,17 @@
         <activity android:name="com.hato.king_game.Activity.PlayActivity"
             android:label="@string/app_title"
             android:screenOrientation="portrait"
+            android:exported="true"
             />
         <activity android:name="com.hato.king_game.Activity.KingActivity"
             android:label="@string/empty"
             android:screenOrientation="portrait"
+            android:exported="true"
             />
         <activity android:name="com.hato.king_game.Activity.CitizenActivity"
             android:label="@string/empty"
             android:screenOrientation="portrait"
-             
+            android:exported="true"
             />
     </application>
 
