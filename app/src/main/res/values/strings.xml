@@ -2,7 +2,7 @@
     <string name="app_name">King Game</string>
 
     <!--共通-->
-    <string name="start_capital">START GAME</string>
+    <string name="start_capital">START!</string>
     <string name="back">back</string>
     <string name="empty"></string>
     <string name="close">CLOSE</string>
@@ -17,8 +17,11 @@
     <string name="ad_view_advertising_interstitial_id">ca-app-pub-8858591747711781/4150287671</string>
 
     <!--Main-->
-    <string name="app_title">King Game ~王様ゲーム~</string>
-    <string name="text_explain_input">Please enter the number of people!\n~人数を入れてね！~</string>
+    <string name="app_title">KINGDOM GAME</string>
+    <string name="app_title1">KINGDOM</string>
+    <string name="app_title2">Game</string>
+    <string name="app_subtitle">王様ゲーム</string>
+    <string name="text_explain_input">Please enter the number of people\n人数を入れてね</string>
     <string name="explain_play_number">Please enter the number of people!\n入力フォームに人数を入れてね!</string>
     <string name="validation_string_to_int">Please enter the numbers!\n数字を入れてね！</string>
     <string name="validation_int_range">Please enter number between 1 and 30!\n1以上30までの数字を入れてね！</string>

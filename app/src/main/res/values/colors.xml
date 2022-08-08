@@ -20,4 +20,11 @@
     <color name="background_gray">#808080</color>
     <color name="tapped_blue_gray">#8099C5</color>
 
+    <!-- New King Color -->
+    <color name="primary_main_red">#C1293E</color>
+    <color name="primary_button_red">#852A26</color>
+    <color name="plus_button_minus_background">#EDEDED</color>
+    <color name="plus_button_minus_main">#848484</color>
+    <color name="result_normal_background">#73B3BF</color>
+    <color name="result_king_background">#EA3323</color>
 </resources>

@@ -160,11 +160,11 @@ public class PlayActivity extends AppCompatActivity {
             }
         });
 
-        // 入力された数を int形にキャストする。
-        try {
-            mInputNumber = Integer.parseInt(getIntent().getStringExtra(PLAY_PEOPLE_NUMBER));
-        } catch (NumberFormatException e) {
-            Log.d("PlayActivity", String.valueOf(e));
+
+        mInputNumber = getIntent().getIntExtra(PLAY_PEOPLE_NUMBER, -1);
+        if (mInputNumber == -1) {
+            finish();
+            return;
         }
 
         setContent();
