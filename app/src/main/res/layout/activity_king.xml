@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_top_blue"
+    android:background="@color/result_normal_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Activity.KingActivity"
@@ -13,33 +13,45 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_thin_blue"
+        android:background="@color/result_normal_background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/text_king"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/king_title"
-            android:textSize="18sp"
-            />
-
-    </androidx.appcompat.widget.Toolbar>
+       />
 
     <TextView
         android:id="@+id/text_king"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/king_explain"
-        android:textSize="25sp"
+        android:text="@string/king_title"
+        android:textSize="80sp"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:background="@color/king_yellow"
         android:gravity="center_horizontal"
-        android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/text_king_jp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/king_explain_jp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/text_king"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/image_king"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/king_1"
+        app:layout_constraintTop_toBottomOf="@id/text_king_jp"
         app:layout_constraintBottom_toTopOf="@id/text_explain_king"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,22 +62,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/role_explain"
+        android:textColor="@color/white"
         android:textSize="15sp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
-        app:layout_constraintTop_toBottomOf="@id/text_king"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <ImageView
-        android:id="@+id/image_king"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@mipmap/img_king"
-        app:layout_constraintTop_toBottomOf="@id/text_explain_king"
-        app:layout_constraintBottom_toTopOf="@id/layout_confirmed"
+        app:layout_constraintTop_toBottomOf="@id/image_king"
+        app:layout_constraintBottom_toTopOf="@id/layout_ad_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -101,7 +104,7 @@
         android:id="@+id/layout_confirmed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/primary_green"
+        android:background="@color/result_normal_background"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,6 +127,5 @@
         />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

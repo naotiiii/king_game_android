@@ -59,13 +59,15 @@ public class PlayGridAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.textView.setText(mContext.getString(R.string.button_king_or_citizen));
-        //holder.textView.setBackgroundColor(mContext.getColor(R.color.primary_button_red));
+
         for (int i = 0; i < mTappedList.size(); i++) {
             if (mTappedList.get(i) == position) {
                 holder.textView.setText(mContext.getString(R.string.button_selected));
                 holder.textView.setBackgroundColor(mContext.getColor(R.color.background_gray));
                 break;
+            } else {
+                holder.textView.setText(mContext.getString(R.string.button_king_or_citizen));
+                holder.textView.setBackgroundColor(mContext.getColor(R.color.primary_button_red));
             }
         }
 

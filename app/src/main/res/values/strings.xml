@@ -10,7 +10,7 @@
     <string name="no">NO</string>
     <string name="confirmed">Confirmed</string>
     <string name="king">KING</string>
-    <string name="role_explain">Check the number and press the button\n番号を確認し、下のボタンを押してください。</string>
+    <string name="role_explain">Check the number and press the button\n番号を確認し、ボタンを押してください</string>
 
     <!--AdMob 広告-->
     <string name="ad_view_advertising_banner_id">ca-app-pub-8858591747711781/1646509306</string>
@@ -39,10 +39,10 @@
 
     <!--Citizen-->
     <string name="citizen_title">You are Citizen</string>
-
+    <string name="citizen_no">NO.%s</string>
 
     <!--King-->
-    <string name="king_title">You are King!!!</string>
-    <string name="king_explain">You are King\nあなたは、王様です。</string>
+    <string name="king_title">KING</string>
+    <string name="king_explain_jp">あなたは王様です</string>
 
 </resources>

@@ -2,6 +2,7 @@ package com.hato.king_game.Activity;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import com.hato.king_game.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -48,6 +50,7 @@ public class KingActivity extends AppCompatActivity {
         Button button = findViewById(R.id.button_confirmed);
         button.setOnClickListener(v -> finish());
 
+        setImage();
        // animationKing();
     }
 
@@ -66,6 +69,26 @@ public class KingActivity extends AppCompatActivity {
                 animation.setTarget(kingImage);
             }
         }, 0, 2100);
+    }
+
+    /**
+     * 画像の設定
+     */
+    private void setImage() {
+        ImageView imageView = findViewById(R.id.image_king);
+        Drawable drawable = getDrawable(R.drawable.king_1);
+
+        Random random = new Random();
+        int num = random.nextInt(4);
+        if (num == 1) {
+            drawable = getDrawable(R.drawable.king_1);
+        } else if (num == 2) {
+            drawable = getDrawable(R.drawable.king_2);
+        } else if (num == 3) {
+            drawable = getDrawable(R.drawable.king_3);
+        } else if (num == 4) {
+            drawable = getDrawable(R.drawable.king_4);
+        }
     }
 
     /**
