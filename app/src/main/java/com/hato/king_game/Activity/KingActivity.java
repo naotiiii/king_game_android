@@ -79,16 +79,18 @@ public class KingActivity extends AppCompatActivity {
         Drawable drawable = getDrawable(R.drawable.king_1);
 
         Random random = new Random();
-        int num = random.nextInt(4);
-        if (num == 1) {
+        int num = random.nextInt(3);
+        System.out.println("========================" + num);
+        if (num == 0) {
             drawable = getDrawable(R.drawable.king_1);
-        } else if (num == 2) {
+        } else if (num == 1) {
             drawable = getDrawable(R.drawable.king_2);
-        } else if (num == 3) {
+        } else if (num == 2) {
             drawable = getDrawable(R.drawable.king_3);
-        } else if (num == 4) {
+        } else if (num == 3) {
             drawable = getDrawable(R.drawable.king_4);
         }
+        imageView.setImageDrawable(drawable);
     }
 
     /**

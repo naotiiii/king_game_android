@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:background="@android:color/black"
+            android:background="@color/result_normal_background"
             ads:adSize="BANNER"
             ads:adUnitId="@string/ad_view_advertising_banner_id"
             app:layout_constraintTop_toTopOf="parent"
