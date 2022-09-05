@@ -19,6 +19,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ShareCompat;
 
 import com.hato.king_game.Adapter.PlayGridAdapter;
 import com.hato.king_game.R;
@@ -53,6 +54,7 @@ public class PlayActivity extends AppCompatActivity {
 
     private Button mCorrectBtn;
     private Button mNextGameBtn;
+    private Button mSharedBtn;
 
     private GridView mGridView;
 
@@ -126,6 +128,21 @@ public class PlayActivity extends AppCompatActivity {
         mNextGameBtn.setVisibility(View.GONE);
         mNextGameBtn.setOnClickListener(v -> onClickNextGameBtn());
 
+        mSharedBtn = findViewById(R.id.shared_button);
+        mSharedBtn.setVisibility(View.GONE);
+        mSharedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShareCompat.IntentBuilder builder = ShareCompat.IntentBuilder.from(PlayActivity.this);
+                builder.setSubject(getString(R.string.shared_sns_subject))
+                        .setText(getString(R.string.shared_sns_message))
+                        .setType("text/plain");
+
+                Intent intent = builder.createChooserIntent();
+                builder.startChooser();
+            }
+        });
+
         mGridView = findViewById(R.id.grid_view);
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -180,6 +197,7 @@ public class PlayActivity extends AppCompatActivity {
 
             mCorrectBtn.setVisibility(View.VISIBLE);
             mNextGameBtn.setVisibility(View.VISIBLE);
+            mSharedBtn.setVisibility(View.VISIBLE);
 
             StringBuilder str = new StringBuilder();
             for (int i=0; i < mCorrectNumList.size(); i++) {

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ShareCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -63,6 +64,21 @@ public class MainActivity extends AppCompatActivity {
                 if (numberOfPeople <= 0) return;
                 numberOfPeople -= 1;
                 numberText.setText(displayNum());
+            }
+        });
+
+
+        Button shareButton = findViewById(R.id.shared_button);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShareCompat.IntentBuilder builder = ShareCompat.IntentBuilder.from(MainActivity.this);
+                builder.setSubject(getString(R.string.shared_sns_subject))
+                        .setText(getString(R.string.shared_sns_message))
+                        .setType("text/plain");
+
+                Intent intent = builder.createChooserIntent();
+                builder.startChooser();
             }
         });
 
