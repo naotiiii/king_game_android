@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.LoadAdError;
 import com.hato.king_game.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -41,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         AdView adView = findViewById(R.id.ad_view);
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+                System.out.println("======================== エラー: " + loadAdError);
+            }
+        });
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
     }
