@@ -141,9 +141,7 @@ public class CitizenActivity extends AppCompatActivity {
      * ツールバーに戻るボタンをセット
      */
     private void setBackButton() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        getSupportActionBar().setTitle(R.string.citizen_message);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }

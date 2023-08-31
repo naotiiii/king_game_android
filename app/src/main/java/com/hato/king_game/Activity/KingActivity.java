@@ -97,9 +97,7 @@ public class KingActivity extends AppCompatActivity {
      * ツールバーに戻るボタンをセット
      */
     private void setBackButton() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        getSupportActionBar().setTitle(R.string.king_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }

@@ -9,17 +9,6 @@
     tools:context=".Activity.KingActivity"
     >
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/result_normal_background"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/text_king"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-       />
-
     <TextView
         android:id="@+id/text_king"
         android:layout_width="wrap_content"
@@ -29,7 +18,7 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />

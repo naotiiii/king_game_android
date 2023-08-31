@@ -35,16 +35,17 @@
     <!--Play-->
     <string name="explain_game">Please select one\nひとつ選択してください。</string>
     <string name="button_king_or_citizen">King\nor\nCitizen</string>
-    <string name="button_selected">Selected\n選択済</string>]:
-    <string name="show_correct_number">Correct Number</string>
+    <string name="button_selected">Selected\n選択済</string>
+    <string name="show_correct_number">Show Number.</string>
     <string name="next_game">Next Game</string>
     <string name="next_game_explain">Start same number of people!!!\n同じ人数でゲームを再開します。</string>
-    <string name="finish_explain_text">If you forget the number,\ntap the Correct Number button!\n番号を忘れた場合は、\nCorrectNumberボタンをタップしてね。</string>
+    <string name="finish_explain_text">If you forget the number,\ntap the Show Number button!\n番号を忘れた場合は、\nCorrectNumberボタンをタップしてね。</string>
     <string name="finish_end_game_word">The numbers were given to everyone.\nNox, everyone "Who is the King?\n
         "全員に番号が行き渡しました。\nさぁ、みんなで「王様だ〜れだ？」</string>
 
     <!--Citizen-->
     <string name="citizen_title">You are Citizen</string>
+    <string name="citizen_message">Citizen</string>
     <string name="citizen_no">NO.%s</string>
 
     <!--King-->

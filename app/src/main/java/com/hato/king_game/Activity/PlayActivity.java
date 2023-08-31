@@ -209,7 +209,7 @@ public class PlayActivity extends AppCompatActivity {
                 str.append( num + "番目: " + "No." + mCorrectNumList.get(i) + "\n");
             }
             mExplainText.setText(getString(R.string.finish_explain_text));
-            mExplainText.setTextColor(getColor(android.R.color.holo_red_dark));
+            mExplainText.setTextColor(getColor(android.R.color.white));
             mFinishText.setText(str);
         }
 
@@ -229,13 +229,6 @@ public class PlayActivity extends AppCompatActivity {
      * ツールバーに戻るボタンをセット
      */
     private void setBackButton() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitleTextColor(getColor(R.color.white));
-
-
-        setSupportActionBar(toolbar);
-
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }
