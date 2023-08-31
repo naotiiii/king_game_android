@@ -30,6 +30,7 @@
     <string name="explain_play_number">Please enter the number of people!\n入力フォームに人数を入れてね!</string>
     <string name="validation_string_to_int">Please enter the numbers!\n数字を入れてね！</string>
     <string name="validation_int_range">Please enter number between 1 and 30!\n1以上30までの数字を入れてね！</string>
+    <string name="button_name_start"></string>
 
     <!--Play-->
     <string name="explain_game">Please select one\nひとつ選択してください。</string>
